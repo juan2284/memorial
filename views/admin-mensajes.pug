@@ -1,0 +1,44 @@
+extends ./layout/login
+block contenido
+
+  include ./layout/header
+
+
+  mixin ofertas(mensaje, mensajes)
+    section.mensajes.p-5
+      .container-accordion.w-100.my-0.mx-auto.py-0.px-1
+        .accordion
+          each mensaje in mensajes
+            .accordion-item.px-3.py-1.mb-3(id=`${mensaje.id}`)
+              a.accordion-link.fs-6.text-white.text-decoration-none.w-100.d-flex.justify-content-between.p-2.m-auto(href=`#${mensaje.id}`)                
+                p.text-white.fs-6.p-0.m-0 #{mensaje.name} | Email: #{mensaje.email}
+                p.text-white.fs-6.p-0.m-0 #{mensaje.date}
+                i.text-white.mas.p-0 +
+                i.text-white.menos.d-none.p-0 -
+              .accordion-answer.overflow-hidden.position-relative
+                p.text-white.fs-6.px-3.py-1 Mensaje Principal: 
+                  | #{mensaje.message}
+
+                p.text-white.fs-6.px-3.py-1 Párrafo 1: 
+                  | #{mensaje.parrafo_1}
+
+                p.text-white.fs-6.px-3.py-1 Párrafo 2: 
+                  | #{mensaje.parrafo_2}
+
+                p.text-white.fs-6.px-3.py-1 Párrafo 3: 
+                  | #{mensaje.parrafo_3}
+
+                p.text-white.fs-6.px-3.py-1 Publicado: 
+                  | #{mensaje.publicar}
+
+                a#editar.me-3.text-decoration-none.acciones.eliminar.px-3.fw-semibold(type='button', href=`/admin/editar-mensaje/${mensaje.id}`) Editar
+                button#publicar.me-3.text-decoration-none.acciones.eliminar.px-3.fw-semibold(type='button', data-cliente=`${mensaje.id}`) Publicar
+                button#eliminarMensaje.me-3.text-decoration-none.acciones.eliminar.px-3.fw-semibold(type='button', data-cliente=`${mensaje.id}`) Eliminar
+
+  .col-md-11.contenido-principal.px-5.py-2.justify-content-center.m-auto
+    h4.titulo-contenido.text-center.text-uppercase.text-white #{pagina}
+    
+    +ofertas(mensaje, mensajes)
+
+
+  include ./layout/footer

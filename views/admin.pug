@@ -1,0 +1,18 @@
+extends ./layout/login
+block contenido
+
+  include ./layout/header
+
+  .container
+    main.admin.row.justify-content-center.align-items-center
+      .row.justify-content-around.align-items-center.m-auto
+        .col-12.col-md-5.contenedores-panel.mt-2.p-0(class=`${marcador ? 'marcador' : ''}`)
+          p.text-center.text-white.fw-bold.titulo-cajas.marcador Testimoniales:
+          p.text-white.text-center #{cantTestimoniales}
+        .col-12.col-md-5.contenedores-panel.mt-2.p-0
+          p.text-center.text-white.fw-bold.titulo-cajas Fotos:
+          p.text-white.text-center #{cantFotos}
+
+    nav.mt-md-0.nav.justify-content-center
+      a.nav-link.text-white.fw-bold.px-3.py-1.text-uppercase.text-center(href="/admin/logout", class=`${admin !== true ? 'd-none' : ''}`) Desconectar
+  include ./layout/footer

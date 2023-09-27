@@ -1,0 +1,31 @@
+extends ./layout/index
+block contenido
+  include ./layout/header
+
+  main.contacto.container.px-5
+    section.encabezado-testimoniales.container
+      h2.titulo-pagina.text-center.pt-5.pb-1.fw-bold Contacto
+      p.subtitulo.text-center.mb-0 (Las historias compartidas con nosotros a través de este espacio serán revisadas por un moderador antes de ser publicadas.)
+
+    .formulario-contacto.m-auto.row.p-4
+      form#enviar-mail.py-4.px-5.container.text-white.col-12.col-md-8(action="/testimoniales", method="POST", name='enviar')
+        .container.mb-1
+          .row
+            label.fw-semibold.mb-1(for='name') Nombre:
+            input#name.p-2.mb-1.rounded(type='text', class="form-control", placeholder='Tu nombre', name="name")
+        .container.mb-1
+          .row
+            label.fw-semibold.mb-1(for='email') Email:
+            input#email.p-2.mb-1.rounded(type='email', class="form-control", placeholder='Email', name="email")
+        .container.mb-1
+          .row
+            label.fw-semibold.mb-1.col-12(for='message') Historia:
+            textarea#message.rounded.p-2.mb-1.w-100.col-12(name="message", cols="30", rows="3", class="form-control", placeholder="Cuéntanos tu historia aqui...")
+
+        .row.justify-content-between.mt-5
+          button#enviar.btn-contacto.col-md-6.px-2.py-1.text-white.opacity-50.uppercase.fw-bold.no-hover(type='submit', disabled)
+            | Enviar
+          button#resetBtn.btn-contacto.col-md-6.px-2.py-1.text-white.uppercase.fw-bold(type='reset')
+            | Reset
+
+  include ./layout/footer

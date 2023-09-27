@@ -1,0 +1,573 @@
+
+/* Paleta */
+:root{
+	--white: #FFFFFF;
+	--space-cadet: rgb(34, 39, 74);
+	--space-cadet-oscuro: rgb(18, 21, 39);
+	--rosa: #ea5959;
+	--amber: rgb(255, 196, 0);
+	--ocre: rgb(112, 86, 0);
+	--dim-gray: rgb(102, 102, 102);
+}
+/* Fin Paleta */
+
+/* Fuentes */
+@font-face {
+  font-family: 'Oswald-Light';
+  src: url('../fonts/Oswald-Light.ttf');
+}
+
+@font-face {
+	font-family: 'Roboto-Light';
+	src: url('../fonts/Roboto-Light.ttf');
+}
+
+@font-face {
+	font-family: 'Greyqo';
+	src: url('../fonts/GreyQo-Regular.ttf');
+}
+/* Fin Fuentes */
+
+/* Mini Formateo */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	color: var(--space-cadet);
+}
+/* Fin Mini Formateo */
+
+/* Generales */
+body {
+	font-family: Roboto-Light;
+	background-image: url('../img/bg-8.jpg');
+	background-attachment: fixed;
+	background-position: left;
+	background-repeat: repeat;
+	background-size: auto;
+	height: 100vh;
+}
+
+p{
+	text-align: justify;
+}
+
+.historia,
+.testimoniales,
+.galeria,
+.contacto{
+	background-image: url('../img/bg-2.jpg');
+	background-attachment: fixed;
+	background-position: left;
+	background-repeat: repeat;
+	background-size: auto;
+	min-height: 78vh;
+}
+
+h2,
+h4,
+h5{
+	font-family: Oswald-Light;
+}
+/* Fin Generales */
+
+/* Header de Navegación */
+.navegacion nav a{
+	font-family: Oswald-Light;
+	transition: all ease-in-out 500ms;
+}
+
+.navegacion nav a:hover{
+	background: rgba(255, 196, 0, .8);
+	box-shadow: 0px 0px 20px 5px rgba(255, 196, 0, .3);
+}
+
+.link-active{
+	background-color: rgba(255, 196, 0, .8);
+}
+/* Fin Header de Navegación */
+
+/* Botón menú Hamburguesa */
+.button{
+	display: none;
+	background: var(--amber);
+	border: none;
+}
+
+.button:hover{
+	background-color: rgba(255, 196, 0, .5);
+	box-shadow: 0px 0px 20px 5px rgba(255, 196, 0, .3);
+}
+
+@media screen and (max-width: 490px) {
+	.button{
+		display: inline-block;
+	}
+
+	.menu{
+		height: 0;
+		background-color: var(--space-cadet);
+		overflow: hidden;
+		transition: all .5s ease;
+		overflow-y: scroll;
+}
+
+.transicion{
+	height: 27vh;
+}
+
+	.menu nav a{
+		display: inline-block;
+		width: 100%;
+	}
+}
+/* Fin Botón menú Hamburguesa */
+
+/* Página Inicio */
+.principal{
+	background-color: rgba(0, 0, 0, .5);
+	border-radius: 20px;
+}
+
+.retrato-principal{
+	border-radius: 50%;
+	filter:drop-shadow(0px 0px 20px rgba(196, 145, 0, .4));
+}
+
+.nombre{
+	font-family: Greyqo;
+	font-size: 5rem;
+}
+
+.fechas{
+	font-family: Oswald-Light;
+	font-size: 1rem;
+	color: var(--dim-gray);
+}
+/* Fin Página Inicio */
+
+/* Página Historia */
+.retrato-general{
+	border-radius: 50%;
+}
+
+.parrafo{
+	font-family: Roboto-Light;
+	font-weight: normal;
+}
+
+.parrafo-especial{
+	font-family: Roboto-Light;
+	font-weight: normal;
+	font-size: 0.9rem;
+}
+
+.subtitulo{
+	font-family: Roboto-Light;
+	font-weight: normal;
+	font-size: 0.8rem;
+}
+
+.mini-info{
+	border-left: 1px solid rgba(255, 196, 0, .4);
+	font-family: Roboto-Light;
+	font-size: .9rem;
+}
+
+.detalle{
+	list-style: none;
+}
+
+.imagen-texto{
+	border-radius: 50%;
+}
+
+.retrato{
+	border-radius: 50%;
+}
+
+.banner{
+	border-top: 1px solid var(--amber);
+	border-bottom: 1px solid var(--amber);
+}
+/* Fin Página Historia */
+
+/* Página Testimoniales */
+.titulo-pagina{
+	margin: auto;
+	color: var(--space-cadet);
+	border-bottom: 1px solid rgba(255, 196, 0, .4);
+}
+
+.link-contacto{
+	font-family: Oswald-Light;
+	color: var(--space-cadet);
+}
+
+.link-contacto:hover{
+	color: rgba(255, 196, 0, .8);
+}
+
+.btn-testimonial{
+	font-family: Oswald-Light;
+	color: var(--white);
+	background: rgba(255, 196, 0, .8);
+	transition: all ease-in-out 500ms;
+}
+
+.btn-testimonial:hover{
+	box-shadow: 0px 0px 20px 5px rgba(255, 196, 0, .3);
+}
+
+.encabezado-testimoniales{
+	padding: 1rem;
+}
+
+.cuerpo-testimoniales{
+	padding: 1rem;
+}
+
+.autor{
+	color: var(--space-cadet);
+	font-size: 1rem;
+}
+
+.remitente{
+	font-family: Oswald-Light;
+	color: var(--ocre);
+	/* color: var(--space-cadet); */
+}
+
+.testimonial{
+	border: none;
+}
+
+.card.testimonial .parrafo{
+	font-size: 0.85rem;
+}
+
+.card-header,
+.card-footer{
+	border: none;
+	/* background-color: rgba(255, 196, 0, .1); */
+	background-color: rgba(34, 39, 74, .1);
+}
+
+.fecha{
+	font-family: Oswald-Light;
+	font-size: 0.8rem;
+}
+
+.card-separador{
+	padding: 0.2rem;
+	border-bottom: 1px solid rgba(255, 196, 0, .4);
+}
+/* Fin Página Testimoniales */
+
+/* Página Galería */
+.img-galeria-mini{
+  cursor: pointer;
+}
+
+.img-galeria-mini img{
+	height: 100%;
+	border-radius: 10px;
+	object-fit: cover;
+}
+/* Fin Página Galería */
+
+/* Formularios en General */
+.formulario-contacto form{
+	background-color: rgba(34, 39, 74, 0.9);
+	border-radius: 10px;
+	font-family: Roboto-Light !important;
+}
+
+.edit-foto form select,
+.edit-foto form select option,
+.agrega-foto form select,
+.agrega-foto form select option{
+	background-color: rgba(34, 39, 74, 0.9);
+	font-family: Oswald-Light !important;
+}
+
+.edit-foto form select:focus,
+.edit-foto form select option:focus,
+.agrega-foto form select:focus,
+.agrega-foto form select option:focus{
+	background-color: rgba(34, 39, 74, 0.9);
+}
+
+.edit-foto form select option,
+.agrega-foto form select option{
+	border: 0;
+	font-family: Oswald-Light !important;
+}
+
+.formulario-login form,
+.edit-mensaje form,
+.edit-foto form,
+.agrega-foto form{
+	background-color: rgba(34, 39, 74, 0.3);
+	border-radius: 10px;
+	font-family: Roboto-Light !important;
+}
+
+.formulario-contacto form label,
+.formulario-login form label,
+.edit-mensaje form label,
+.edit-foto form label,
+.edit-foto form select,
+.edit-foto form select option,
+.agrega-foto form label,
+.agrega-foto form select,
+.agrega-foto form select option{
+	color: var(--white) !important;
+	font-family: Oswald-Light;
+}
+
+.formulario-contacto form input,
+.formulario-login form input,
+.formulario-contacto form textarea,
+.edit-mensaje form textarea,
+.edit-foto form input,
+.edit-foto form select,
+.agrega-foto form input,
+.agrega-foto form select{
+	border-color: rgba(34, 39, 74, 0.3);
+	font-size: 0.8rem !important;
+}
+
+.formulario-contacto form input::placeholder,
+.formulario-login form input::placeholder,
+.formulario-contacto form textarea::placeholder,
+.edit-mensaje form textarea::placeholder,
+.formulario-edit-foto form input::placeholder,
+.formulario-edit-foto form select::placeholder,
+.formulario-agrega-foto form input::placeholder,
+.formulario-agrega-foto form select::placeholder{
+	color: rgba(102, 102, 102, .5);
+	font-family: Roboto-Light;
+	font-size: 0.8rem;
+}
+
+.formulario-contacto form input:focus,
+.formulario-login form input:focus,
+.formulario-contacto form textarea:focus,
+.edit-mensaje form textarea:focus,
+.edit-foto form input:focus,
+.edit-foto form select:focus,
+.agrega-foto form input:focus,
+.agrega-foto form select:focus{
+	border-color: rgba(102, 102, 102, .5);
+	box-shadow: 0px 0px 2px 2px rgba(102, 102, 102, .5);
+}
+
+.btn-contacto{
+	font-family: Oswald-Light;
+	color: var(--white);
+	background: rgba(255, 196, 0, .8);
+	transition: all ease-in-out 500ms;
+	font-size: 1.1rem;
+	background-color: var(--amber);
+	border: 2px solid var(--amber);
+	transition: .3s ease;
+}
+
+.btn-contacto:hover{
+	background-color: transparent;
+	border: 2px solid var(--amber);
+	color: var(--white);
+}
+
+.no-hover{
+  font-size: 1.1rem !important;
+  background-color: var(--amber) !important;
+  border: 2px solid var(--amber) !important;
+  transition: none !important;
+  font-family: Oswald-Light !important;
+  letter-spacing: normal !important;
+  opacity: 50%;
+}
+/* Fin Formularios en General */
+
+/* Footer */
+footer{
+	/* background-color: var(--space-cadet); */
+	background-color: var(--amber);
+	/* background-image: url('../img/bg-8.jpg');
+	background-attachment: fixed;
+	background-position: left;
+	background-repeat: repeat; */
+}
+
+.creado-por p{
+	margin-top: 0.1rem;
+	font-size: 0.8rem;
+	font-family: Oswald-Light;
+}
+
+.creado-por a{
+	font-size: 0.8rem;
+}
+
+.creado-por a:hover{
+	text-decoration: underline;
+}
+
+.actual-year{
+	/* color: var(--amber); */
+	color: var(--space-cadet);
+}
+/* Fin Footer */
+
+/* Admin Generales */
+.admin{
+	min-height: 78vh;
+}
+
+.titulo-cajas{
+	font-family: Oswald-Light;
+	background-color: var(--amber);
+	border-radius: 10px 10px 0 0;
+	-webkit-border-radius: 10px 10px 0 0;
+	-moz-border-radius: 10px 10px 0 0;
+	-ms-border-radius: 10px 10px 0 0;
+	-o-border-radius: 10px 10px 0 0;
+}
+
+.contenedores-panel{
+	position: relative;
+	border-radius: 10px;
+	background-color: rgba(34, 39, 74, .6);
+	font-size: 2rem;
+}
+
+.contenedores-panel.marcador::after{
+	content: '';
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	background-color: var(--rosa);
+	border-radius: 50%;
+	border: 1px solid var(--rosa);
+	top: -5px;
+	right: -5px;
+}
+/* Fin Admin Generales */
+
+/* Mensajes */
+.mensajes{
+	background-color: rgba(34, 39, 74, 0.3);
+	border-radius: 10px;
+	min-height: 70vh;
+}
+
+.container-accordion{
+	font-family: Oswald-Light;
+}
+
+.accordion-item{
+	background-color: var(--space-cadet);
+	border-radius: .4rem;
+	box-shadow: .2rem 2px .5rem rgba(0, 0, 0, .3);
+  border: none;
+}
+
+.accordion-link{
+	background-color: var(--space-cadet);
+}
+
+.accordion-link:hover{
+	color: var(--dim-gray);
+}
+
+.accordion-link i{
+	padding: .5rem;
+}
+
+.accordion-answer{
+	max-height: 0;
+	background-color: var(--space-cadet-oscuro);
+	transition: max-height 700ms;
+}
+
+.accordion-answer::before{
+	content: "";
+	position: absolute;
+	width: .6rem;
+	height: 90%;
+	background-color: var(--amber);
+	top: 5%;
+	left: 0;
+	overflow-y: scroll;
+}
+
+.accordion-item:target .accordion-answer{
+	max-height: 50rem;
+}
+
+.accordion-item:target .accordion-link .mas{
+	display: none;
+}
+
+.accordion-item:target .accordion-link .menos{
+	display: block;
+}
+
+button#eliminarMensaje,
+button#eliminarFoto,
+a#editar,
+button#publicar{
+	background-color: transparent;
+	display: inline;
+	border: none;
+	color: var(--white);
+	transition: all ease 500ms;
+}
+
+button#eliminarMensaje:hover,
+button#eliminarFoto:hover,
+a#editar:hover,
+button#publicar:hover{
+	color: var(--amber);
+}
+/* Fin Mensajes */
+
+/* Admin Fotos */
+table{
+	background-color: var(--space-cadet);
+	border-radius: 10px;
+}
+
+table tbody tr td,
+table tbody tr th{
+	border: none;
+}
+
+table tbody tr:hover td,
+table tbody tr:hover th{
+  border-top: 1px solid rgba(255, 255, 255, .1);
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+	color: rgba(255, 255, 255, .3) !important;
+}
+
+table tbody .miniatura{
+  width: 40px;
+}
+
+.acciones:hover{
+  color: var(--amber) !important;
+}
+
+.agregar-foto{
+	background-color: var(--amber);
+	border: 2px solid var(--amber);
+	border-radius: 50%;
+	transition: all ease 500ms;
+}
+
+.agregar-foto:hover{
+	background-color: transparent;
+}
+/* Fin Admin Fotos */

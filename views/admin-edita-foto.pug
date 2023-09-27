@@ -1,0 +1,39 @@
+extends ./layout/login
+block contenido
+
+  include ./layout/header
+
+
+  h4.fechas.text-center.mt-0.px-0.text-white.mt-5 Editar Mensaje
+
+  main.edit-foto.container.px-5
+    .formulario-edit-foto.m-auto.row.p-4
+      form#enviar-mail.py-4.px-5.container.text-white.col-12.col-md-8(action=`/admin/editar-foto/${foto.id}`, method="POST", name='enviar')
+        .container.mb-4
+          .row
+            label.fw-semibold.mb-1(for='tipo') Tipo:
+            select#tipo.form-control.p-2.mb-1.rounded.border.border-0.w-100.col-12(name="tipo", data-tipo=`${foto.tipo}`)
+              option#select.text-white.text-uppercase(value="", disabled, selected) Seleccione
+              option#option1.text-white.text-uppercase(value="1") Foto
+              option#option2.text-white.text-uppercase(value="2") Recordatorio
+        .container.mb-4
+          .row
+            label.fw-semibold.mb-1(for='nombre') Nombre de la Foto:
+            input#nombre.p-2.mb-1.rounded.border.border-0.w-100.col-12(type='text', class="form-control", placeholder='Nombre', name="nombre", data-nombre=`${foto.nombre}`)
+        .container.mb-4
+          .row
+            label.fw-semibold.mb-1(for='alt') Descripción de la Foto:
+            input#alt.p-2.mb-1.rounded.border.border-0.w-100.col-12(type='text', class="form-control", placeholder='Descripción', name="alt", data-alt=`${foto.alt}`)
+        .container.mb-4
+          .row
+            label.fw-semibold.mb-1(for='parrafo_3') Ruta de la Foto:
+            input#ruta.p-2.mb-1.rounded.border.border-0.w-100.col-12(type='text', class="form-control", placeholder='Ruta', name="ruta", data-ruta=`${foto.ruta}`)
+
+        .row.justify-content-between
+          button#enviar.btn-contacto.col-md-6.px-2.py-1.text-white.opacity-50.uppercase.fw-bold.no-hover(type='submit', disabled)
+            | Actualizar
+          button#resetBtn.btn-contacto.col-md-6.px-2.py-1.text-white.uppercase.fw-bold(type='reset')
+            | Reset
+
+
+  include ./layout/footer
