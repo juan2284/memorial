@@ -1,0 +1,27 @@
+header.w-100.container.p-0.my-0.mx-auto
+  .navegacion
+    .row.justify-content-center.align-items-center.px-0.mx-0.container
+      if pagina !== 'Inicio'
+        .col-12.col-md-3.px-0
+          h4.nombre.text-white.text-center.fs-1.px-0 Elvira Sosa
+
+      button#boton-menu.button.col-12.px-0
+        svg.bi.bi-list.svg(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#FFF' viewbox='0 0 16 16')
+          path(fill-rule='#FFF' d='M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z')
+      button#boton-cerrar.button.col-12.px-0.d-none
+        svg.bi.bi-x(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#FFF' viewbox='0 0 16 16')
+          path(d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z')
+
+      .menu.col-12.col-md-8.px-0
+        nav.mt-md-0.nav.justify-content-center
+          a.nav-link.text-white.fw-bold.px-3.py-1.text-uppercase.text-center(href="/", class=`${pagina === 'Inicio' ? 'link-active' : ''}`) Inicio
+          a.nav-link.text-white.fw-bold.px-3.py-1.text-uppercase.text-center(href="/historia", class=`${pagina === 'Historia' ? 'link-active' : ''}`) Historia
+          a.nav-link.text-white.fw-bold.px-3.py-1.text-uppercase.text-center(href="/testimoniales", class=`${pagina === 'Testimoniales' ? 'link-active' : ''}`) Testimoniales
+          a.nav-link.text-white.fw-bold.px-3.py-1.text-uppercase.text-center(href="/galeria", class=`${pagina === 'Galeria' ? 'link-active' : ''}`) Galeria
+          a.nav-link.text-white.fw-bold.px-3.py-1.text-uppercase.text-center(href="/contacto", class=`${pagina === 'Contacto' ? 'link-active' : ''}`) Contacto
+
+          a.nav-link.text-white.fw-bold.px-3.py-1.text-uppercase.text-center(href="/admin", class=`${pagina === 'Admin' ? 'link-active' : ''} ${admin !== true ? 'd-none' : ''}`) Panel
+          a.nav-link.text-white.fw-bold.px-3.py-1.text-uppercase.text-center(href="/admin/testimoniales", class=`${pagina === 'Admin Mensajes' ? 'link-active' : ''} ${admin !== true ? 'd-none' : ''}`) Mensajes
+          a.nav-link.text-white.fw-bold.px-3.py-1.text-uppercase.text-center(href="/admin/fotos", class=`${pagina === 'Admin Fotos' ? 'link-active' : ''} ${admin !== true ? 'd-none' : ''}`) Uploads
+
+

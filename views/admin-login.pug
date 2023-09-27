@@ -1,0 +1,23 @@
+extends ./layout/login
+block contenido
+
+  h2.nombre.text-white.text-center.mb-0.pb-0.px-0 Elvira Sosa
+  h4.fechas.text-center.mt-0.px-0 Panel de Administración
+
+  main.login.container.px-5
+    .formulario-login.m-auto.row.p-4
+      form#enviar-mail.py-4.px-5.container.text-white.col-12.col-md-8(action="/admin", method="POST", name='enviar')
+        .container.mb-1
+          .row
+            label.fw-semibold.mb-1(for='name') Usuario:
+            input#user.p-2.mb-1.rounded(type='text', class="form-control", placeholder='Usuario', name="user")
+        .container.mb-1
+          .row
+            label.fw-semibold.mb-1(for='email') Contraseña:
+            input#pass.p-2.mb-1.rounded(type='password', class="form-control", placeholder='Contraseña', name="pass")
+
+        .row.justify-content-between
+          button#enviar.btn-contacto.col-md-6.px-2.py-1.text-white.opacity-50.uppercase.fw-bold.no-hover(type='submit', disabled)
+            | Enviar
+          button#resetBtn.btn-contacto.col-md-6.px-2.py-1.text-white.uppercase.fw-bold(type='reset')
+            | Reset

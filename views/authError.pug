@@ -1,0 +1,11 @@
+extends ./layout/login
+block contenido
+
+  include ./layout/header
+
+  h2.titulo-contenido.text-white.text-uppercase.text-center.fw-semibold.pt-3.mt-3.text-danger 
+    span.text-danger ERROR! 
+    | Usuario o Contraseña Incorrectos
+
+  .row.justify-content-between.align-items-center
+    a.col-md-5.btn-portafolio.text-white.fw-semibold.py-2.px-3.text-center.text-uppercase.text-decoration-none.mt-5(href="/admin/login") Log In

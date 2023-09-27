@@ -1,0 +1,32 @@
+extends ./layout/index
+block contenido
+  include ./layout/header
+
+  main.galeria.container.px-5
+
+    section.encabezado-testimoniales.container
+      h2.titulo-pagina.text-center.pt-5.pb-1.fw-bold Galería Fotográfica Familiar
+
+      section.galeria        
+        .row.justify-content-center.mt-5.px-0.mx-0.grid
+          each foto in fotos
+            .col-12.col-sm-6.col-lg-3.img-galeria-mini.p-2.zoom-wraper
+              a(href=`img/${foto.ruta}`, target='_blank', rel="noopener noreferrer") 
+                img.w-100.img-fluid.object-fit-cover(src=`img/${foto.ruta}`, alt=`${foto.alt}`, rel="noopener noreferrer")
+
+    
+    section.encabezado-testimoniales.container
+      h2.titulo-pagina.text-center.pt-5.pb-1.fw-bold Recordatorios
+
+      section.galeria
+        .row.justify-content-center.mt-5.px-0.mx-0.grid
+          each recordatorio in recordatorios
+            .col-12.col-sm-6.col-lg-3.img-galeria-mini.p-2.zoom-wraper
+              a(href=`img/${recordatorio.ruta}`, target='_blank', rel="noopener noreferrer") 
+                img.w-100.img-fluid.object-fit-cover(src=`img/${recordatorio.ruta}`, alt=`${recordatorio.alt}`, rel="noopener noreferrer")
+
+
+
+
+
+  include ./layout/footer

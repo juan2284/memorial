@@ -1,0 +1,43 @@
+extends ./layout/index
+block contenido
+  include ./layout/header
+
+  mixin mensajes(testimoniales)
+    each testimonial in testimoniales
+      .card.testimonial.row.justify-content-center.mt-4
+        .card-header
+          h4.col-12
+            span.autor.text-uppercase.fw-bold Autor: 
+            span.remitente #{testimonial.name}
+
+        .card-body.row.justify-content-center.m-auto
+          p.parrafo.col-md-6 #{testimonial.message}
+
+          if testimonial.parrafo_1 !== null
+            p.parrafo.col-md-6 #{testimonial.parrafo_1}
+          if testimonial.parrafo_2 !== null
+            p.parrafo.col-md-6 #{testimonial.parrafo_2}
+          if testimonial.parrafo_3 !== null
+            p.parrafo.col-md-6 #{testimonial.parrafo_3}
+
+        .card-footer
+          em.fecha « #{testimonial.date} »
+
+        .card-separador
+
+  main.testimoniales.container.px-5
+    section.encabezado-testimoniales.container
+      h2.titulo-pagina.text-center.pt-5.pb-1.fw-bold Historias sobre Elvira
+      p.parrafo.text-center.mb-0 Si tienes alguna historia sobre Elvira que desees contarnos, puedes hacerlo a través 
+      p.parrafo.mb-4.text-center del botón debajo de este párrafo o a través del enlace de 
+        span "
+          a(href="/contacto").text-decoration-none.fw-bold.link-contacto CONTACTO
+          | ".
+      .row.justify-content-center
+        a.btn-testimonial.fw-bold.px-5.py-1.text-uppercase.text-decoration-none.text-center.col-md-3(href="/contacto") Contacto
+
+    section.cuerpo-testimoniales
+      +mensajes(testimoniales)
+
+
+  include ./layout/footer
