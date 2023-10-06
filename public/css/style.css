@@ -2,12 +2,12 @@
 /* Paleta */
 :root{
 	--white: #FFFFFF;
-	--space-cadet: rgb(34, 39, 74);
-	--space-cadet-oscuro: rgb(18, 21, 39);
+	--space-cadet: #22274a;
+	--space-cadet-oscuro: #121527;
 	--rosa: #ea5959;
-	--amber: rgb(255, 196, 0);
-	--ocre: rgb(112, 86, 0);
-	--dim-gray: rgb(102, 102, 102);
+	--amber: #ffc400;
+	--ocre: #705600;
+	--dim-gray: #666666;
 }
 /* Fin Paleta */
 
@@ -70,6 +70,70 @@ h5{
 	font-family: Oswald-Light;
 }
 /* Fin Generales */
+
+/* Estilos del Loading */
+.loading{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: var(--space-cadet-oscuro);
+	color: var(--white);
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+	display: none;
+	font-family: Oswald-Light;
+}
+
+.loading--show {
+	display: flex;
+}
+
+/* Clases del Spinner */
+.spinner {
+  width: 40px;
+  height: 40px;
+
+  position: relative;
+  margin: 100px auto;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--white);
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+/* Fin Estilos del Loading */
 
 /* Header de Navegación */
 .navegacion nav a{
