@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const LIST_IMAGES_PRELOAD = Array.from(document.images);
   // Elemento visual del loading
   const LOADING = document.querySelector('.loading');
-  console.log(LOADING.checkVisibility());
   // Tiempo de espera entre revisiones en ms
   const SLEEP_CHECK = 50;
 
